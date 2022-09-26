@@ -4,15 +4,16 @@ pipeline {
     	maven 'local_maven'
 	}
 	stages {
+	stage ('checkout code'){
+		checkout scm
+	}
     	
     	stage('clean') {
         	steps {
         	sh "mvn clean"  	 
         	}
     	}
-	stage ('checkout code'){
-		checkout scm
-	}
+	
     	stage('Build') {
         	steps {
         	sh "mvn compile"  	 
