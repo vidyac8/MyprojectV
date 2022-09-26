@@ -15,12 +15,9 @@ pipeline {
         	sh "mvn compile"  	 
         	}
     	}
-   	 
-    	stage("Unit test") {          	 
-        	steps {  	 
-            	sh "mvn test"          	 
-        	}
+   	stage ('Test Cases Execution'){
+		sh "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test"
 	}
-
+    	
 }
 }
