@@ -4,9 +4,9 @@ pipeline {
     	maven 'local_maven'
 	}
 	stages {
-	stage ('checkout code'){
-		checkout scm
-	}
+	//stage ('checkout code'){
+	//	checkout scm
+	//}
     	
     	stage('clean') {
         	steps {
