@@ -10,6 +10,9 @@ pipeline {
         	sh "mvn clean"  	 
         	}
     	}
+	stage ('checkout code'){
+		checkout scm
+	}
     	stage('Build') {
         	steps {
         	sh "mvn compile"  	 
