@@ -20,6 +20,12 @@ pipeline {
 		sh "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test"
 		}
 	}
+	post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+	
     	
 }
 }
